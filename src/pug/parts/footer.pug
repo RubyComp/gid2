@@ -1,4 +1,38 @@
-footer#footer
-	.container
-		span © Все права защищены
-		a(href="/legal.html") Политика конфиденциальности
+footer.fluid-container.footer
+
+	.footer__top
+		.footer__brand
+			.footer__brand-logo
+				img.site-logo(src=imgPath + "logo-light.png")
+			.footer__brand-note Сервис раскрутки Instagram, Telegram и других площадок.
+
+		nav.footer__nav
+			include ../modules/nav
+
+	.footer__bottom
+		.footer__legal-nav
+			ul
+				li
+					a(href="") Политика конфиденциальности
+				li
+					a(href="") Публичная оферта
+				li
+					a(href="") Политика Cookies
+				li ©2023
+
+		.footer__pay
+			.footer__pay-title Принимаем к оплате
+			ul.footer__pay-list
+				li
+					img(src="/resources/images/payments/mastercard.svg", alt="")
+				li
+					img(src="/resources/images/payments/visa.svg", alt="")
+				li
+					img(src="/resources/images/payments/mir.svg", alt="")
+				li
+					img(src="/resources/images/payments/qiwi.svg", alt="")
+				li
+					img(src="/resources/images/payments/umoney.svg", alt="")
+
+		div
+			a(href="").btn.btn_primary Написать в поддержку

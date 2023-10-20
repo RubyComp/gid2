@@ -1,20 +1,10 @@
 $imgPath: '/resources/images/';
 
 :root {
-	// --back-color: #111;
-	// --accent-color: #FB3B11;
-	// --accent-color-soft: #FB3B114D;
-	// --dark-color: #161615;
-	// --grey-color: #383838;
-	// --light-grey-color: #8B8B8B;
-	// --light-color: #F1F1F1;
-	// --silver-gradient: linear-gradient(140deg, #323232 0%, #F3F3F3 100%);
-	// --carbon-gradient: linear-gradient(180deg, #1C1C1C 0%, #111 50.00%);
-	// --text-color: var(--light-color);
-
 	--white-color: #FFFFFF;
 	--light-color: #F4F3F5;
 	--dark-color: #140F14;
+	--dark-grey-color: #2B222B;
 	--violet-color-1: #9700CC;
 	--violet-color-2: #AD0DE5;
 	--violet-color-3: #A341C5;
@@ -23,13 +13,12 @@ $imgPath: '/resources/images/';
 	--gold-color: #FFCF4A;
 
 	--violet-gradient: linear-gradient(93.83deg, #8000AD 0.99%, #E18BFE 98.07%);
-
-	// --silver-line: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, #FFF 52.60%, rgba(217, 217, 217, 0.00) 99.99%);
+	--violet-gradient-1: linear-gradient(270deg, #8000AD 36.41%, #E18BFE 112.81%);
 
 	// --accent-font: 'Kharkiv-Tone', 'roboto', 'arial';
 	--main-font: 'Inter', 'roboto', 'arial';
 
-	// --header-height: 68px;
+	--header-height: 106px;
 
 	// --page-top-margin: 4rem;
 

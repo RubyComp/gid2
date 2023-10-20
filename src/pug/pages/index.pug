@@ -8,13 +8,13 @@ block vars
 block content
 
 	section.fluid-container.hero
-		.hero_content
+		.hero__content
 			.container
-				article.hero_article
-					.hero_label Более 20 услуг в одном месте
-					h1.hero_title Накрутка Instagram*, TikTok, Telegram, ВКонтакте, YouTube
-					.hero_text Мгновенная накрутка лайков, подписчиков, просмотров, комментариев
-				.inline-btns.hero_actions
+				article.hero__article
+					.hero__label Более 20 услуг в одном месте
+					h1.hero__title Накрутка Instagram*, TikTok, Telegram, ВКонтакте, YouTube
+					.hero__text Мгновенная накрутка лайков, подписчиков, просмотров, комментариев
+				.inline-btns.hero__actions
 					a.btn.btn_light.btn_action.btn_up-next Каталог услуг
 					a.btn.btn_glass Быстрый заказ
 	
@@ -38,14 +38,167 @@ block content
 
 	section.container
 		h2.title.title_focus Популярные услуги
-		div
-			section
-			section
-			section
-			section
+		.cards-container
+			section.card
+				.card__label Услуга
+				.card__image
+					img(src="/resources/images/telegram-promo.png", alt="Telegram")
+				article.card__desc
+					header.card__title Telegram
+					p.card__text Заполненные профили, мгновенный запуск заказа. Без списаний.
+					footer.card__price
+						b.card__price-value 500
+						small.card__price-note ₽ / 1000 подписчиков
+				.card__actions
+					a.btn.btn_primary Оформить заказ
 
+			section.card
+				.card__label Услуга
+				.card__image
+					img(src="/resources/images/vk-promo.png", alt="vk")
+				article.card__desc
+					header.card__title Вконтакте
+					p.card__text Добавление подписчиков с большой скоростью и лимитами.
+					footer.card__price
+						b.card__price-value 500
+						small.card__price-note ₽ / 1000 подписчиков
+				.card__actions
+					a.btn.btn_primary Оформить заказ
+
+			section.card
+				.card__label Услуга
+				.card__image
+					img(src="/resources/images/instagram-promo.png", alt="Instagram")
+				article.card__desc
+					header.card__title Instagram
+					p.card__text Подписчики с реальными публикациями, аватарками и именами.
+					footer.card__price
+						b.card__price-value 500
+						small.card__price-note ₽ / 1000 подписчиков
+				.card__actions
+					a.btn.btn_primary Оформить заказ
+
+			section.card
+				.card__label Услуга
+				.card__image
+					img(src="/resources/images/tiktok-promo.png", alt="TikTok")
+				article.card__desc
+					header.card__title TikTok
+					p.card__text Подписчики с минимальным шансом от списания. До 50К в сутки.
+					footer.card__price
+						b.card__price-value 500
+						small.card__price-note ₽ / 1000 подписчиков
+				.card__actions
+					a.btn.btn_primary Оформить заказ
 
 	section.container
-		div
-			h2 Функции сервиса
-		div
+		.functions
+			h2.functions__title Функции сервиса
+			.functions__detail
+
+				section.function
+					.function__icon.icon-like
+					.function__main
+						.function__title Мне нравится
+						.function__text Лайки, классы и реакции
+
+				section.function
+					.function__icon.icon-friend
+					.function__main
+						.function__title Подписчики
+						.function__text Лучшие на рынке офферного типа
+
+				section.function
+					.function__icon.icon-heart
+					.function__main
+						.function__title Комментарии
+						.function__text На посты, фото или видео
+
+				section.function
+					.function__icon.icon-eye
+					.function__main
+						.function__title Просмотры
+						.function__text На посты, фото или видео
+
+	section.fluid-container.about
+		.container.about__content
+			h2.about__title Какие задачи мы решаем?
+			ol.about__list
+				li.about__item
+					.about__item-title Накрутка подписчиков
+					.about__item-note Подписчики оказывают основное влияние на&nbsp;рейтинг и&nbsp;качество аккаунта. От&nbsp;количества фолловеров зависит ранжируемость профиля в&nbsp;поиске для других пользователей и&nbsp;вызывает доверие человека, зашедшего на&nbsp;Вашу страничку. Чем выше показатель фолловеров, тем больше шансов что случайный гость проявит интерес и&nbsp;подпишется!
+				li.about__item
+					.about__item-title Накрутка лайков
+
+
+	section.container.catalog
+		h2.title.title_focus Что будем продвигать?
+		include ../modules/catalog
+
+	section.container
+		.functions-light
+			.functions-light__header
+				h2.functions-light__title Работаем на&nbsp;совесть
+				.functions-light__subtitle Выполнили более 100 000 заказов.
+			.functions-light__detail
+
+				section.function-light
+					.function-light__icon.icon-like
+					.function-light__main
+						.function-light__title Надежность
+						.function-light__text Тысячи довольных клиентов уже пользуются нашими услугами и остаются довольны.
+				section.function-light
+					.function-light__icon.icon-friend
+					.function-light__main
+						.function-light__title Низкие цены
+						.function-light__text У нас самые низкие цены на рынке и отличное качество аудитории.
+
+				section.function-light
+					.function-light__icon.icon-heart
+					.function-light__main
+						.function-light__title 100% выполнение заказов
+						.function-light__text Если Ваш заказ не был выполнен — мы вернем Вам денежные средства в полном объеме.
+
+				section.function-light
+					.function-light__icon.icon-eye
+					.function-light__main
+						.function-light__title Помощь
+						.function-light__text Поможем в любое время в тикетах или в онлайн чате.
+
+
+	section.container.faq
+		h2.title.title_focus Популярные вопросы
+		.faq__body
+			aside.faq__aside
+				.notice
+					.notice__title Не нашил ответ?
+					.notice__text Пишите нам
+					.notice__actions
+						.btn.btn_light Задать вопрос
+
+			.faq__main
+				.accordion
+
+					section.accordion__section
+						h3.accordion__question Как работает сервис и как выполняются заказы?
+						.accordion__answer Данные для авторизации отправляются на электронную почту, которую Вы указали при регистрации или создании заказа. Рекомендуем проверить папку "Спам" в случае, если письмо не пришло в основной почтовый ящик. Если у Вас все еще возникают проблемы с авторизацией, пожалуйста, свяжитесь с нашей службой поддержки для получения дополнительной информации.
+
+					section.accordion__section
+						h3.accordion__question Я забыл пароль
+						.accordion__answer Данные для авторизации отправляются на электронную почту, которую Вы указали при регистрации или создании заказа. Рекомендуем проверить папку "Спам" в случае, если письмо не пришло в основной почтовый ящик. Если у Вас все еще возникают проблемы с авторизацией, пожалуйста, свяжитесь с нашей службой поддержки для получения дополнительной информации.
+
+					section.accordion__section
+						h3.accordion__question Вы накручиваете подписчиков из конкретного города/области?
+						.accordion__answer 33333 Данные для авторизации отправляются на электронную почту, которую Вы указали при регистрации или создании заказа. Рекомендуем проверить папку "Спам" в случае, если письмо не пришло в основной почтовый ящик. Если у Вас все еще возникают проблемы с авторизацией, пожалуйста, свяжитесь с нашей службой поддержки для получения дополнительной информации.
+
+					section.accordion__section
+						h3.accordion__question Как зарегистрироваться?
+						.accordion__answer 44444 Данные для авторизации отправляются на электронную почту, которую Вы указали при регистрации или создании заказа. Рекомендуем проверить папку "Спам" в случае, если письмо не пришло в основной почтовый ящик. Если у Вас все еще возникают проблемы с авторизацией, пожалуйста, свяжитесь с нашей службой поддержки для получения дополнительной информации.
+
+					section.accordion__section
+						h3.accordion__question Как создать заказ?
+						.accordion__answer 55555 Данные для авторизации отправляются на электронную почту, которую Вы указали при регистрации или создании заказа. Рекомендуем проверить папку "Спам" в случае, если письмо не пришло в основной почтовый ящик. Если у Вас все еще возникают проблемы с авторизацией, пожалуйста, свяжитесь с нашей службой поддержки для получения дополнительной информации.
+
+					section.accordion__section
+						h3.accordion__question Как работает сервис и как выполняютсязаказы?
+						.accordion__answer 66666 Данные для авторизации отправляются на электронную почту, которую Вы указали при регистрации или создании заказа. Рекомендуем проверить папку "Спам" в случае, если письмо не пришло в основной почтовый ящик. Если у Вас все еще возникают проблемы с авторизацией, пожалуйста, свяжитесь с нашей службой поддержки для получения дополнительной информации.

@@ -3,22 +3,7 @@ header.fluid-container.header
 		a.header__logo(href="/")
 			img.site-logo(src=imgPath + "logo.png")
 		nav.header__nav
-			ul
-				li
-					a(href="/fff.html").header__link
-						span Каталог услуг
-				li
-					a(href="/fff.html").header__link
-						span Отзывы
-				li
-					a(href="/fff.html").header__link
-						span Помощь
-				li
-					a(href="/fff.html").header__link
-						span Контакты
-				li
-					a(href="/fff.html").header__link
-						span Партнёрская программа
+			include ../modules/nav
 
 		div.header__actions
 			a(href="").btn.btn_icon.btn_login Личный кабинет
