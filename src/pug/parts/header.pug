@@ -1,0 +1,28 @@
+header.fluid-container.header
+	.header__content
+		a.header__logo(href="/")
+			img.site-logo(src=imgPath + "logo.png")
+		nav.header__nav
+			ul
+				li
+					a(href="/fff.html").header__link
+						span Каталог услуг
+				li
+					a(href="/fff.html").header__link
+						span Отзывы
+				li
+					a(href="/fff.html").header__link
+						span Помощь
+				li
+					a(href="/fff.html").header__link
+						span Контакты
+				li
+					a(href="/fff.html").header__link
+						span Партнёрская программа
+
+		div.header__actions
+			a(href="").btn.btn_icon.btn_login Личный кабинет
+			a(href="").btn.btn_primary Создать аккаунт
+
+		div.header__burger
+			include ./burger
