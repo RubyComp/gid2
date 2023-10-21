@@ -1,0 +1,26 @@
+extends ../templates/common
+
+block vars
+	- const title = 'Мои заказы'
+
+block content
+
+	.container
+		.account
+			.account__aside
+				include ../modules/balance-aside
+			.account__main
+				.orders
+					.bread Личный кабинет / Ваши заказы
+					h1 Ваши заказы
+
+					.placeholder-image
+						img(src="/resources/images/hand.png", alt="")
+
+					.message
+						.message__main
+							.message__title Заказов не найдено
+							.message__text Сделай свой первый шаг к популярности
+						.message__aside
+							.btn.btn_primary Создать заказ
+

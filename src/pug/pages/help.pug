@@ -1,0 +1,19 @@
+extends ../templates/common
+
+block vars
+	- const title = 'Помощь'
+
+block content
+
+	section.fluid-container.mini-hero.hero-faq
+		.mini-hero__content
+			.container
+				article.mini-hero__article
+					.mini-hero__label Главная / Отзывы
+					h1.mini-hero__title Ваши популярные вопросы
+					.mini-hero__text Ознакомьтесь с нашей рубрикой популярных вопросов о нашем сервисе. Если вы не нашли необходимый ответ, вы всегда можете у нас спросить.
+				.inline-btns.mini-hero__actions
+					a.btn.btn_light.btn_action.btn_up-next Задать вопрос
+
+	.container.no-aside-fag
+		include ../modules/faq

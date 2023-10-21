@@ -1,5 +1,5 @@
 .hero {
-	background-image: url('/resources/images/hero.png'), var(--violet-gradient);
+	background-image: url('/resources/images/hero.png'), var(--hero-gradient);
 	background-position: center;
 	background-size: 100%;
 	border-radius: 10px;
@@ -704,3 +704,37 @@
 }
 
 ///////
+/// 
+
+.catalog-article {
+	border-left: 1px solid var(--grey-color);
+	margin-left: 365px;
+	margin-top: 60px;
+	padding-left: 38px;
+	position: relative;
+
+	&::before {
+		background-color: var(--violet-color-1);
+		border-radius: 16px;
+		content: '';
+		height: 30px;
+		left: -8px;
+		position: absolute;
+		top: 30px;
+		width: 15px;
+	}
+
+	&__text {
+		color: var(--grey-color);
+		max-width: 890px;
+		line-height: 1.4em;
+		p + p {
+			margin-top: .8em;
+		}
+	}
+
+	.title {
+		margin-bottom: 16px;
+		font-size: 32px;
+	}
+}

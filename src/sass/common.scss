@@ -4,6 +4,10 @@ body {
 	color: var(--dark-color);
 }
 
+#main {
+	min-height: calc(100vh - var(--header-height) - 400px);
+}
+
 button,
 input {
 	font-family: inherit;
@@ -226,6 +230,9 @@ a {
 	&-time {
 		background-image: url('/resources/images/icons/time.svg');
 	}
+	&-message {
+		background-image: url('/resources/images/icons/message.svg');
+	}
 
 	&-like {
 		background-image: url('/resources/images/icons/like.svg');
@@ -239,6 +246,36 @@ a {
 	&-eye {
 		background-image: url('/resources/images/icons/eye.svg');
 	}
+	&-rub {
+		background-image: url('/resources/images/icons/rub.svg');
+	}
+	&-fire {
+		background-image: url('/resources/images/icons/fire.png');
+	}
+
+
+	&-rocket {
+		background-image: url('/resources/images/icons/rocket.svg');
+	}
+	&-settings {
+		background-image: url('/resources/images/icons/settings.svg');
+	}
+	&-money {
+		background-image: url('/resources/images/icons/money.svg');
+	}
+	&-exit {
+		background-image: url('/resources/images/icons/exit.svg');
+	}
+	&-home {
+		background-image: url('/resources/images/icons/home.svg');
+	}
+	&-ruble {
+		background-image: url('/resources/images/icons/ruble.svg');
+	}
+	&-help {
+		background-image: url('/resources/images/icons/help.svg');
+	}
+
 }
 
 .stars {

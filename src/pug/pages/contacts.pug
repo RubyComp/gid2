@@ -1,0 +1,36 @@
+extends ../templates/mega
+
+block vars
+	- const title = 'Контакты'
+
+block content
+
+	section.fluid-container.mega-hero.hero-contact
+		.mega-hero__content
+			.container
+				article.mega-hero__article
+					.mega-hero__label Главная / Контакты
+					h1.mega-hero__title Будьте на связи
+					.mega-hero__text
+
+						.contacts-list
+
+							p Пишите нам на Email, в онлайн чат на сайте или в тикет-систему в личном кабинете.
+
+							.contact-item
+								.contact-item__icon.icon-message
+								.contact-item__main
+									.contact-item__title E-mail:
+									a(href="").contact-item__value support@gidsmm.com
+
+							.contact-item
+								.contact-item__icon.icon-time
+								.contact-item__main
+									.contact-item__title Время работы:
+									.contact-item__value 11:00 - 21:00, без выходных.
+							.mega-link
+								a(href="") Мы в Телеграм
+
+
+				.inline-btns.mega-hero__actions
+					a.btn.btn_light.btn_action.btn_up-next Написать в поддержку
