@@ -645,6 +645,10 @@
 
 .accordion {
 
+	p + p {
+		margin-top: .66em;
+	}
+
 	&__section {
 		position: relative;
 		background-color: var(--white-color);

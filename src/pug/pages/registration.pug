@@ -1,0 +1,23 @@
+extends ../templates/form
+
+block vars
+	- const title = 'Создать аккаунт'
+
+block content
+
+	section.fluid-container
+		.back
+			.form
+				.form__main
+					h1.form__title Создать аккаунт
+					form(action="")
+						fieldset.form__fieldset
+							input(type="text" placeholder="E-mail").input.form__input-text
+							input(type="text" placeholder="Пароль").input.form__input-text
+					.form__note Я соглашаюсь, что ознакомлен с 
+						a(href="/legal.html").link политикой&nbsp;конфеденциальности
+					div
+						a(href="").btn.btn_extra.btn_primary Создать аккаунт
+				footer.form__footer
+					div Есть аккаунт? 
+						a(href="/login.html") Войти

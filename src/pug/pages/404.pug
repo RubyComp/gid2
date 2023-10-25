@@ -1,12 +1,17 @@
-extends ../templates/simply
+extends ../templates/mega
 
 block vars
-	- const title = 'Страница не найдена'
+	- const title = 'Контакты'
 
 block content
-	div.not-found
-		div.not-found__text
-			h1 404 Cтраница не&nbsp;найдена
-			p Похоже эта страница не&nbsp;работает :(
-		a(href="/").btn.btn_primary
-			span На главную
+
+	section.fluid-container.mega-hero.hero-not-found
+		.mega-hero__content
+			.container
+				article.mega-hero__article
+					.mega-hero__label Главная / 404
+					h1.mega-hero__title Возникла ошибка
+					.mega-hero__text Такой страницы не существует. Пожалуйста, вернитесь&nbsp;на&nbsp;главную.
+
+				.inline-btns.mega-hero__actions
+					a.btn.btn_light.btn_action.btn_up-next На главную
