@@ -1,0 +1,87 @@
+extends ../templates/common
+
+block vars
+	- const title = 'Пополнить баланс'
+
+block content
+	.container
+		.account
+			.account__aside
+				include ../modules/account-aside
+			.account__main
+				.account__block
+					.bread Личный кабинет / Пополнение баланса
+					h1.account__title Пополнить баланс
+
+					.fund
+						.fund__main
+							form(action="")
+								fieldset
+									legend Сумма пополнения
+
+									.extra-input.extra-input_glass
+										input(type="number" value="1000")
+										.extra-input__aside
+											.extra-input__mark 3%
+											.extra-input__suffix ₽
+
+									.funds-propose-list
+										input(type="button" class="funds-propose" value="500")
+										input(type="button" class="funds-propose" value="1000")
+										input(type="button" class="funds-propose" value="5000")
+										input(type="button" class="funds-propose" value="15000")
+
+									.funds-note
+										.funds-note__head
+											div Вам будет зачислено
+											.funds-note__total
+												b 1030
+												span ₽
+										.funds-note__footer
+											.funds-note__value
+												div Ваш бонус:
+												div 30 ₽
+											div Вам осталось еще <b>4000&nbsp;₽</b> до&nbsp;5%
+
+								fieldset
+									legend Выберите метод оплаты:
+									.funds-select-list
+										label(for="fund-1")
+											img(src="/resources/images/payments/qiwi.svg", alt="")
+											input(type="radio" name="fund" id="fund-1")
+											span Банковская карта
+
+										label(for="fund-2")
+											img(src="/resources/images/payments/qiwi.svg", alt="")
+											input(type="radio" name="fund" id="fund-2")
+											span YooMoney
+
+								.btn.btn_primary Пополнить баланс
+
+						aside.fund__aside
+							h2 Система бонусов
+
+							table.sale
+								tbody
+									tr
+										th 3%
+										th 5%
+										th 10%
+										th 15%
+										th 20%
+								tfoot
+									tr
+										td 1&nbsp;000₽
+										td 5&nbsp;000₽
+										td 10&nbsp;000₽
+										td 50&nbsp;000₽
+										td 100&nbsp;000₽
+
+							.note
+								.note__icon.icon-warn
+								.note__text Если у&nbsp;платежной системы есть ограничения на одну транзакцию, то пополняйте частями в&nbsp;течение часа и напишите нам в&nbsp;техническую поддержку. Вам выдадут оставшийся бонус.
+
+							.fund__disclaimer
+								.fund__text Если у вас возникли проблемы с&nbsp;оплатой, свяжитесь с&nbsp;менеджером
+
+								a(href="/contacts.html").btn.btn_glass-color Написать в&nbsp;поддержку

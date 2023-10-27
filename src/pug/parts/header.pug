@@ -6,8 +6,13 @@ header.fluid-container.header
 			include ../modules/nav
 
 		div.header__actions
-			a(href="/orders.html").btn.btn_icon.btn_login Личный кабинет
-			a(href="/registration.html").btn.btn_primary Создать аккаунт
+			//- a(href="/orders.html").btn.btn_icon.btn_login Личный кабинет
+			a(href="/balance.html").btn.btn_icon.btn_rub
+				.balance-label
+					.balance-label__title Ваш баланс:
+					.balance-label__value 7 048 ₽
+			//- a(href="/registration.html").btn.btn_primary Создать аккаунт
+			a(href="/orders.html").btn.btn_primary Личный кабинет
 
-		div.header__burger
-			include ./burger
+	.header__burger
+		include ./burger

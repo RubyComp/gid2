@@ -1,0 +1,77 @@
+extends ../templates/common
+
+block vars
+	- const title = 'Текущий Баланс'
+
+block content
+	.container
+		.account
+			.account__aside
+				include ../modules/account-aside
+			.account__main
+				.account__block
+					.bread Личный кабинет / Пополнение баланса
+					h1.account__title Текущий Баланс
+					.balance-detail
+						.balance-detail__main
+							a(href="/orders.html").btn.btn_icon.btn_rub
+								.balance-label
+									.balance-label__title Ваш баланс:
+									.balance-label__value 7 048 ₽
+						.balance-detail__bonus
+							a(href="/orders.html").btn.btn_icon.btn_star
+								.balance-label
+									.balance-label__title Ваши бонусы::
+									.balance-label__value 150 ₽
+						.balance-detail__actions
+							a(href="/out.html").btn.btn_glass-color Вывести на свой счет
+
+					.balance-section
+						h2 История баланса
+						.table-wrapper
+							.table-container
+								table.table
+									thead
+										tr
+											th Сумма
+											th Валюта
+											th Выполнено
+											th Комментарий
+											th Дата
+									tbody
+										tr
+											td 1500₽
+											td Рубль
+											td Платеж подтверждён
+											td …
+											td 25.11.2023
+										tr
+											td 1500₽
+											td Рубль
+											td Платеж подтверждён
+											td …
+											td 25.11.2023
+										tr
+											td 1500₽
+											td Рубль
+											td Платеж подтверждён
+											td …
+											td 25.11.2023
+										tr
+											td 1500₽
+											td Рубль
+											td Платеж подтверждён
+											td …
+											td 25.11.2023
+										tr
+											td 1500₽
+											td Рубль
+											td Платеж подтверждён
+											td …
+											td 25.11.2023
+										tr
+											td 1500₽
+											td Рубль
+											td Платеж подтверждён
+											td …
+											td 25.11.2023

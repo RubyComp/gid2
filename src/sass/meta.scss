@@ -10,12 +10,14 @@ $imgPath: '/resources/images/';
 	--violet-color-3: #A341C5;
 	--pink-color: #F5E5FA;
 	--grey-color: #898789;
+	--light-grey-color: #C5C5C5;
 	--gold-color: #FFCF4A;
 
 	--red-color: #CC0000;
 
 	--violet-gradient: linear-gradient(93.83deg, #8000AD 0.99%, #E18BFE 98.07%);
 	--violet-gradient-1: linear-gradient(270deg, #8000AD 36.41%, #E18BFE 112.81%);
+	--violet-gradient-2: linear-gradient(104deg, #8000AD 0%, #E18BFE 137.36%), #D9D9D9;
 
 	--hero-gradient: var(--violet-gradient);
 
@@ -23,15 +25,17 @@ $imgPath: '/resources/images/';
 	--main-font: 'Inter', 'roboto', 'arial';
 
 	--header-height: 106px;
+	--btn-size: 40px;
 
 	// --page-top-margin: 4rem;
 
-	// @include sm {
-	// 	--header-height: 60px;
-	// }
+	@include md-and-less {
+		--header-height: 70px;
+	}
 	// @include xs {
 	// 	--header-height: 60px;
 	// }
+
 }
 
 *,

@@ -2,6 +2,17 @@ document.addEventListener('DOMContentLoaded', function () {
 	console.log('Scripts')
 
 	////////////////////////////////
+	// Burger
+
+	const burger = document.getElementById('burger');
+	const burgerMenu = document.getElementById('burger-menu');
+	
+	burger.addEventListener('click', function() {
+		console.log(1111);
+		burgerMenu.classList.toggle('active');
+	});
+
+	////////////////////////////////
 	// Accordion
 
 	const sections = document.querySelectorAll('.accordion__section')

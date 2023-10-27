@@ -1,30 +1,73 @@
 .hero {
-	background-image: url('/resources/images/hero.png'), var(--hero-gradient);
+	--hero-image: url('/resources/images/hero/hero.png');
+	background-image: var(--hero-image), var(--hero-gradient);
 	background-position: center;
+	background-repeat: no-repeat;
 	background-size: 100%;
 	border-radius: 10px;
 	color: var(--white-color);
 	height: 600px;
 	margin-top: 5px;
+	padding: 0 30px;
+
+	@include md {
+		height: 550px;
+	}
+	@include sm {
+		height: 470px;
+		background-size: 108%;
+		background-position: left center;
+	}
+	@include xs {
+		padding: 32px 20px;
+	}
+	@include xs {
+		--hero-image: url('/resources/images/hero/hero-compact.png');
+		background-position: right bottom, center;
+		background-size: 600px, auto;
+		height: 796px;
+		padding: 32px 20px;
+	}
+	@include xxs {
+		background-size: 600px, auto;
+		background-position: -100px bottom, center;
+		height: 796px;
+	}
 
 	&__content {
 		align-items: center;
 		display: flex;
 		height: 100%;
+		padding-bottom: 35px;
+		@include md {
+			padding-bottom: 50px;
+		}
+		@include xs {
+			align-items: flex-start;
+		}
 	}
 
 	&__label {
-		display: inline;
-		border-radius: 3px;
-		padding: 4px 16px;
 		background: var(--violet-color-3);
+		border-radius: 3px;
+		display: inline;
+		padding: 4px 16px;
+		text-transform: uppercase;
+		letter-spacing: .02em;
+		@include md-and-less {
+			font-size: 14px;
+		}
+		@include xs {
+			font-size: 10px;
+		}
+	
 	}
 
 	&__article {
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
-		gap: 16px;
+		gap: 15px;
 	}
 
 	&__title {
@@ -35,59 +78,156 @@
 		line-height: 130%;
 		max-width: 900px;
 		text-transform: uppercase;
+		@include md {
+			font-size: 36px;
+			max-width: 700px;
+		}
+		@include sm {
+			font-size: 28px;
+			max-width: 500px;
+		}
+		@include xs {
+			font-size: 26px;
+		}
 	}
 
 	&__text {
 		font-size: 20px;
+		@include md-and-less {
+			font-size: 18px;
+			max-width: 480px;
+		}
+		@include xs {
+			font-size: 16px;
+			line-height: 1.4em;
+		}
 	}
 	&__actions {
 		margin-top: 52px;
+		@include md {
+			margin-top: 40px;
+		}
+		@include sm {
+			margin-top: 30px;
+		}
+		@include xs {
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
+		}
 	}
 }
 
-
 .advantages {
+	align-items: center;
+	background-color: var(--white-color);
+	border-radius: 10px;
 	display: flex;
 	gap: 10px;
-	justify-content: space-between;
-	border-radius: 10px;
-	background-color: var(--white-color);
-	margin-top: -62px;
 	height: 160px;
-	align-items: center;
+	justify-content: space-between;
 	margin-bottom: 88px;
+	margin-top: -62px;
 	padding: 65px 40px;
+
+	@include md {
+		gap: 16px;
+		margin-bottom: 70px;
+	}
+
+	@include sm {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		padding: 10px;
+		margin-bottom: 60px;
+	}
+	@include xs {
+		align-items: flex-start;
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+		height: initial;
+		margin: 5px 0;
+		padding: 30px;
+		margin-bottom: 60px;
+	}
 }
 
 .advantage {
+	align-items: center;
 	display: flex;
 	gap: 28px;
-	align-items: center;
+	@include md {
+		gap: 22px;
+	}
+	@include sm {
+		align-items: center;
+		flex-direction: column;
+		gap: 14px;
+		text-align: center;
+	}
 
 	&__text {
 		padding-bottom: 4px;
 	}
 	&__icon {
+		--size: 76px;
 		background-color: var(--violet-color-1);
-		border-radius: 50%;
-		height: 76px;
-		width: 76px;
-		background-repeat: no-repeat;
 		background-position: center;
-	
+		background-repeat: no-repeat;
+		border-radius: 50%;
+		height: var(--size);
+		width: var(--size);
+
+		@include md {
+			--size: 60px;
+		}
+		@include sm {
+			--size: 50px;
+		}
+		@include xs {
+			--size: 54px;
+		}
 	}
 	&__value {
 		font-size: 32px;
 		font-weight: 600;
+		@include md {
+			font-size: 24px;
+		}
+		@include sm {
+			font-size: 18px;
+		}
+		@include xs {
+			font-size: 26px;
+		}
 	}
 	&__note {
 		margin-top: 4px;
+		@include md {
+			font-size: 14px;
+		}
+		@include sm-and-less {
+			font-size: 13px;
+		}
 	}
 }
 
 .cards-container {
-	display: flex;
-	gap: 5px;
+	--per-row: 4;
+	display: grid;
+	grid-gap: 5px;
+	grid-template-columns: repeat(var(--per-row), 1fr);
+	width: 100%;
+	@include md {
+		--per-row: 2;
+	}
+	@include sm {
+		--per-row: 2;
+	}
+	@include xs {
+		--per-row: 1;
+	}
 }
 
 .card {
@@ -96,7 +236,6 @@
 	border-radius: 10px 10px 14px 14px;
 	display: flex;
 	flex-direction: column;
-	max-width: 352px;
 	align-items: flex-start;
 
 	&__image img {
@@ -115,6 +254,7 @@
 	&__desc {
 		font-size: 20px;
 		padding: 26px 28px 20px;
+		flex-grow: 1;
 	}
 
 	&__title {
@@ -167,6 +307,25 @@
 	grid-template-columns: 3fr 5fr;
 	gap: 10px;
 
+	@include md {
+		grid-template-columns: 2fr 3fr;
+	}
+	@include sm-and-less {
+		display: flex;
+		background-image:
+			url('/resources/images/messages.png'),
+			url('/resources/images/star.png'),
+			var(--violet-gradient-1);
+			background-position: left bottom, right top, center;
+		flex-direction: column;
+		gap: 40px;
+		padding: 50px 40px 180px;
+	}
+	@include xs {
+		padding: 40px 20px 180px;
+		gap: 30px;
+	}
+
 	&__title {
 		font-size: 50px;
 		font-weight: 600;
@@ -174,30 +333,104 @@
 		text-transform: uppercase;
 		max-width: 380px;
 		line-height: 1.25em;
+		@include md {
+			font-size: 32px;
+		}
+		@include sm {
+			font-size: 32px;
+			align-self: center;
+			text-align: center;
+		}
+		@include xs {
+			font-size: 26px;
+			align-self: center;
+			text-align: center;
+		}
 	}
 
 	&__detail {
 		display: grid;
 		grid-gap: 25px 30px;
 		grid-template-columns: 1fr 1fr;
+		@include sm {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+		}
+		@include xs {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+		}
 	}
 }
 
 .functions-light {
-	background-image: url('/resources/images/reactions.png');
 	background-color: var(--white-color);
+	background-image: url('/resources/images/reactions.png');
 	background-position: left bottom;
 	background-repeat: no-repeat;
 	background-size: contain;
 	border-radius: 10px;
-	margin-top: 100px;
-
 	display: grid;
-	grid-template-columns: 1fr 2fr;
 	gap: 10px;
+	grid-template-columns: 1fr 2fr;
+	margin-top: 100px;
+	position: relative;
 
+	@include md-and-less {
+		background-image: none;
+	}
+
+	@include md-and-less {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+
+		&::before,
+		&::after {
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+			content: '';
+			position: absolute;
+		}
+		&::before {
+			background-image: url('/resources/images/heart.png');
+			height: 70px;
+			left: 40px;
+			top: -30px;
+			width: 70px;
+		}
+		&::after {
+			background-image: url('/resources/images/plus.png');
+			height: 70px;
+			right: 40px;
+			top: 30px;
+			width: 70px;
+		}
+	}
+	// @include sm-and-less {
+	// 	display: flex;
+	// 	background-image:
+	// 		url('/resources/images/messages.png'),
+	// 		url('/resources/images/star.png'),
+	// 		var(--violet-gradient-1);
+	// 		background-position: left bottom, right top, center;
+	// 	flex-direction: column;
+	// 	gap: 40px;
+	// 	padding-bottom: 180px;
+	// }
 	&__header {
 		padding: 50px 0 0 64px;
+		@include md-and-less {
+			align-items: center;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			padding: 46px 15px 32px;
+			text-align: center;
+		}
 	}
 	&__title {
 		font-size: 50px;
@@ -206,17 +439,40 @@
 		text-transform: uppercase;
 		max-width: 380px;
 		line-height: 1.25em;
+		@include md {
+			font-size: 32px;
+		}
+		@include sm {
+			font-size: 32px;
+		}
+		@include xs {
+			font-size: 26px;
+			max-width: 184px;
+		}
+		// @include sm {
+		// 	font-size: 32px;
+		// 	align-self: center;
+		// 	text-align: center;
+		// }
 	}
 	&__subtitle {
 		color: var(--grey-color);
 		font-size: 20px;
 		margin-top: 20px;
+		@include md {
+			font-size: 18px;
+		}
 	}
 
 	&__detail {
 		display: grid;
 		grid-gap: 5px;
 		grid-template-columns: 1fr 1fr;
+		@include sm-and-less {
+			display: flex;
+			flex-direction: column;
+			gap: 5px;
+		}
 	}
 }
 
@@ -228,24 +484,54 @@
 	gap: 30px;
 	padding: 18px 26px 17px;
 
+	@include md {
+		padding: 14px 20px 13px;
+		gap: 18px;
+	}
+
 	&__icon {
+		--size: 76px;
 		background-color: var(--white-color);
 		background-position: center;
 		background-repeat: no-repeat;
 		border-radius: 50%;
-		height: 76px;
-		min-width: 76px;
-		width: 76px;
+		height: var(--size);
+		min-width: var(--size);
+		width: var(--size);
+		@include md {
+			--size: 58px;
+		}
+		// @include sm {
+		// 	// --size: 76px;
+		// }
+		@include xs {
+			--size: 50px;
+		}
 	}
 
 	&__title {
 		font-size: 20px;
 		font-weight: 600;
 		text-transform: uppercase;
+		@include md {
+			font-size: 18px;
+		}
+		// @include sm {
+		// 	// --size: 76px;
+		// }
+		@include xs {
+			font-size: 16px;
+		}
 	}
 	&__text {
 		font-size: 14px;
 		margin-top: 8px;
+		@include md {
+			margin-top: 3px;
+		}
+		@include xs {
+			font-size: 13px;
+		}
 	}
 }
 
@@ -285,9 +571,20 @@
 	background-image: url('/resources/images/phone.png');
 	background-position: left center;
 	background-repeat: no-repeat;
+	background-size: 46vw;
 	display: flex;
 	min-height: 760px;
 	position: relative;
+	
+	@include md {
+		background-size: 50vw;
+		background-position-x: -120px;
+		min-height: 630px;
+	}
+	@include sm-and-less {
+		background-image: none;
+		min-height: initial;
+	}
 
 	&::before {
 		background-color: inherit;
@@ -301,12 +598,31 @@
 
 	&__content {
 		padding-left: 590px;
+		@include md {
+			padding-left: 360px;
+		}
+		@include sm-and-less {
+			padding-left: 10px;
+			margin: 60px auto;
+		}
 	}
 
 	&__title {
 		font-size: 50px;
 		font-weight: 600;
 		text-transform: uppercase;
+		@include md {
+			font-size: 36px;
+		}
+		@include sm {
+			font-size: 32px;
+		}
+		@include sm-and-less {
+			text-align: center;
+		}
+		@include xs {
+			font-size: 26px;
+		}
 	}
 
 	&__list {
@@ -317,6 +633,14 @@
 		margin-top: 50px;
 		padding-left: 112px;
 
+		@include md {
+			margin-top: 42px;
+			padding-left: 84px;
+		}
+		@include sm-and-less {
+			padding-left: 80px;
+		}
+
 		> li {
 			list-style: none;
 			counter-increment: custom-counter-name;
@@ -325,6 +649,9 @@
 			&:before {
 				align-items: center;
 				background-image: url('/resources/images/bubble-grey.png');
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: contain;
 				color: var(--grey-color);
 				content: counter(custom-counter-name); 
 				display: flex;
@@ -338,6 +665,22 @@
 				text-align: center;
 				top: -15px;
 				width: 83px;
+
+				@include md {
+					font-size: 26px;
+					height: 50px;
+					padding-right: 8px;
+					top: -10px;
+					width: 59px;
+					left: -82px;
+				}
+				@include sm-and-less {
+					height: 50px;
+					width: 60px;
+					font-size: 20px;
+					padding-right: 9px;
+					left: -88px;
+				}
 			}
 
 			&:nth-child(1):before {
@@ -352,6 +695,12 @@
 		font-size: 32px;
 		font-weight: 600;
 		text-transform: uppercase;
+		@include md {
+			font-size: 24px;
+		}
+		@include sm-and-less {
+			font-size: 20px;
+		}
 	}
 
 	&__item-note {
@@ -359,12 +708,21 @@
 		line-height: 1.35em;
 		color: var(--grey-color);
 		margin-top: 13px;
+		@include sm-and-less {
+			font-size: 16px;
+		}
 	}
 
 }
 
 .catalog {
 	margin-top: 100px;
+	@include md {
+		margin-top: 80px;
+	}
+	@include sm-and-less {
+		margin-top: 60px;
+	}
 
 	&__body {
 		display: grid;
@@ -372,6 +730,16 @@
 		grid-template-columns: 350px 1fr;
 		margin-top: 50px;
 		position: relative;
+		@include md {
+			grid-template-columns: 240px 1fr;
+			margin-top: 32px;
+		}
+		@include sm-and-less {
+			display: flex;
+			flex-direction: column;
+			gap: 12px;
+			margin-top: 22px;
+		}
 	}
 
 	&__main {
@@ -387,13 +755,19 @@
 			background-color: var(--white-color);
 			border-radius: 10px;
 			padding: 40px 20px;
+			@include md {
+				padding: 20px 10px;
+			}
 		}
 	}
 
 	&__categories-list {
 		display: flex;
 		flex-direction: column;
-		gap: 20px;
+		gap: 12px;
+		@include md {
+			gap: 6px;
+		}
 	}
 
 	&__category {
@@ -402,11 +776,19 @@
 		display: flex;
 		font-size: 24px;
 		font-weight: 600;
-		gap: 26px;
-		height: 40px;
-		padding: 34px 16px;
+		gap: 22px;
+		padding: 18px 14px;
 		position: relative;
 		cursor: pointer;
+		@include md {
+			font-size: 18px;
+			padding: 20px 14px;
+			gap: 14px;
+		}
+		@include sm-and-less {
+			padding: 16px 14px;
+			font-size: 18px;
+		}
 
 		&.selected {
 			background-color: var(--light-color);
@@ -422,6 +804,9 @@
 			position: absolute;
 			right: 18px;
 			width: 11px;
+			@include md {
+				right: 12px;
+			}
 		}
 
 		&:hover {
@@ -433,24 +818,35 @@
 			align-items: center;
 			justify-content: center;
 			width: 40px;
+			img {
+				height: auto;
+				max-height: 30px;
+				width: 100%;
+			}
+			@include md {
+				width: 30px;
+			}
+	
 		}
 	}
 
 	&__more {
-		text-transform: uppercase;
 		background-color: var(--white-color);
-		color: var(--violet-color-1);
-		padding: 25px 50px;
-		font-weight: 500;
 		border-radius: 10px;
+		color: var(--violet-color-1);
 		cursor: pointer;
-
+		font-weight: 500;
+		padding: 25px 50px;
+		text-transform: uppercase;
 		transition: .2s;
 
 		&:hover {
 			background-color: var(--violet-color-1);
 			color: var(--white-color);
 			opacity: .8;
+		}
+		@include sm-and-less {
+			margin-top: 24px;
 		}
 	}
 
@@ -459,6 +855,14 @@
 		border-radius: 10px;
 		padding: 40px 45px;
 
+		@include md {
+			padding: 25px 30px;
+		}
+		@include sm-and-less {
+			padding: 20px 25px;
+			margin: 32px 0 26px;
+		}
+
 		&-title {
 			font-size: 24px;
 			font-weight: 600;
@@ -466,6 +870,7 @@
 
 		&-list {
 			display: flex;
+			flex-wrap: wrap;
 			gap: 5px;
 			margin-top: 22px;
 		}
@@ -497,9 +902,22 @@
 	grid-template-columns: 1fr 350px;
 	grid-gap: 14px;
 	background-color: var(--white-color);
+	border-radius: 10px;
+
+	@include md {
+		grid-template-columns: 1fr 230px;
+	}
+	@include sm-and-less {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
 
 	& + & {
 		margin-top: 6px;
+		@include sm-and-less {
+			margin-top: 38px;
+		}
 	}
 
 	&__main {
@@ -507,35 +925,84 @@
 		grid-template-columns: auto 1fr;
 		gap: 20px;
 		padding: 30px 25px 40px;
+		@include md {
+			gap: 15px;
+		}
+	}
+
+	&__title {
+		align-items: center;
+		display: flex;
+		line-height: 1.9em;
+		position: relative;
+		text-transform: uppercase;
+		gap: 16px;
 	}
 
 	&__icon {
+		--size: 80px;
 		align-items: center;
 		background-color: var(--light-color);
 		border-radius: 50%;
 		display: flex;
-		height: 80px;
+		height: var(--size);
 		justify-content: center;
-		width: 80px;
+		left: -102px;
+		margin-bottom: 2px;
+		position: absolute;
+		width: var(--size);
+		@include md {
+			--size: 70px;
+			left: -85px;
+		}
+		@include sm-and-less {
+			position: initial;
+		}
+		@include xs {
+			--size: 48px;
+		}
 
 		img {
-			height: 60px;
-			width: 60px;
+			--img-size: 60px;
+			height: var(--img-size);
+			width: var(--img-size);
+			@include md {
+				--img-size: 50px;
+			}
+			@include xs {
+				--img-size: 36px;
+			}
+	
 		}
 	}
 
 	&__desc {
 		margin-top: 24px;
+		padding-left: 102px;
+		@include md {
+			padding-left: 80px;
+		}
+		@include sm-and-less {
+			margin-top: 0;
+			padding-left: 5px;
+		}
 	}
 
 	&__name {
 		font-size: 24px;
 		font-weight: 600;
+		@include xs {
+			font-size: 16px;
+			line-height: 1.45em;
+		}
 	}
 	&__text {
 		color: var(--grey-color);
 		line-height: 1.35em;
 		margin-top: 10px;
+		@include sm-and-less {
+			margin-top: 14px;
+		}
 	}
 
 	&__aside {
@@ -546,6 +1013,16 @@
 		flex-direction: column;
 		justify-content: space-between;
 		padding: 10px;
+		@include sm {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			align-items: center;
+		}
+		@include xs {
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
+		}
 
 		.btn {
 			border-radius: 10px;
@@ -563,10 +1040,25 @@
 		gap: 5px;
 		justify-content: center;
 		padding: 0 30px 10px;
+		text-transform: uppercase;
+
+		@include sm {
+			padding-bottom: 0;
+		}
+		@include xs {
+			align-items: center;
+			flex-direction: row;
+			justify-content: flex-start;
+			padding: 10px 10px 5px;
+		}
 
 		&-title {
 			font-size: 24px;
 			font-weight: 600;
+			@include xs {
+				font-size: 16px;
+				margin-top: 5px;
+			}
 		}
 
 		&-text {
@@ -578,17 +1070,29 @@
 		&-value {
 			font-size: 32px;
 			font-weight: 600;
+			@include xs {
+				font-size: 26px;
+			}
 		}
 		&-note {
 			margin-bottom: 3px;
 			font-size: 16px;
+			@include xs {
+				font-size: 13px;
+			}
 		}
 	}
 
 	&__footer {
 		display: flex;
-		gap: 30px;
+		gap: 15px 30px;
 		margin-top: 40px;
+		@include md {
+			flex-direction: column;
+		}
+		@include xs {
+			flex-direction: column;
+		}
 	}
 
 	&__rating {
@@ -601,13 +1105,25 @@
 
 .faq {
 	margin-top: 100px;
+	@include md {
+		margin-top: 80px;
+	}
+	@include sm {
+		margin-top: 70px;
+	}
+	@include xs {
+		margin-top: 60px;
+	}
 
 	&__body {
 		display: grid;
 		grid-gap: 5px;
 		grid-template-columns: 350px 1fr;
-		margin-top: 50px;
 		position: relative;
+		@include md-and-less {
+			display: flex;
+			flex-direction: column-reverse;
+		}
 	}
 	&__main {
 		display: flex;
@@ -616,7 +1132,11 @@
 	}
 
 	// &__aside {
-		
+	// 	@include md-and-less {
+	// 		.btn {
+	// 			height: initial;
+	// 		}
+	// 	}
 	// }
 
 }
@@ -649,6 +1169,10 @@
 		margin-top: .66em;
 	}
 
+	&__answer {
+		opacity: 0;
+	}
+
 	&__section {
 		position: relative;
 		background-color: var(--white-color);
@@ -662,11 +1186,14 @@
 
 			.accordion__answer {
 				margin-top: -14px;
+				opacity: 1;
+				@include xs {
+					margin-top: initial;
+				}
 			}
 			.accordion__question::after {
 				background-color: var(--light-color);
 				background-image: url('/resources/images/icons/cross-active.svg');
-
 			}
 			
 		}
@@ -680,7 +1207,16 @@
 		justify-content: space-between;
 		padding-right: 100px;
 		position: relative;
-		padding: 35px 50px;
+		padding: 35px 100px 35px 50px;
+		@include sm {
+			padding: 25px 100px 25px 30px;
+			font-size: 20px;
+		}
+		@include xs {
+			font-size: 16px;
+			padding: 20px 100px 20px 20px;
+			min-height: 80px;
+		}
 	}
 	&__question::after {
 		background-color: var(--violet-color-1);
@@ -692,7 +1228,7 @@
 		height: 50px;
 		position: absolute;
 		right: 27px;
-		top: 27px;
+		// top: 27px;
 		width: 50px;
 		transition: .1s;
 	}
@@ -703,6 +1239,12 @@
 		overflow: hidden;
 		transition: .5s;
 		padding: 0 50px;
+		@include sm {
+			padding: 0 30px;
+		}
+		@include xs {
+			padding: 0 22px;
+		}
 	}
 
 }
@@ -716,6 +1258,18 @@
 	margin-top: 60px;
 	padding-left: 38px;
 	position: relative;
+
+	@include md {
+		margin-left: 280px;
+	}
+	@include sm {
+		margin-left: 40px;
+		padding-left: 30px;
+	}
+	@include xs {
+		margin-left: 18px;
+		padding-left: 25px;
+	}
 
 	&::before {
 		background-color: var(--violet-color-1);

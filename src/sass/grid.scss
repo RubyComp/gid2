@@ -61,8 +61,20 @@ $xxs: $xxs-grid + $fix;
 	}
 }
 
+@mixin more-than-md {
+	@media only screen and (min-width: $lg) {
+		@content;
+	}
+}
+
 @mixin sm-and-less {
 	@media only screen and (max-width: calc($md - .2px)) {
+		@content;
+	}
+}
+
+@mixin md-and-less {
+	@media only screen and (max-width: calc($lg - .2px)) {
 		@content;
 	}
 }
@@ -71,29 +83,37 @@ $xxs: $xxs-grid + $fix;
 	margin: 0 auto;
 
 	@include lg {
+		// background-color: rgba(128, 128, 128, 0.233);
 		// background-color: grey;
 		width: $lg-grid;
 	}
 
 	@include md {
+		// background-color: rgba(255, 127, 80, 0.267);
 		// background-color: coral;
 		width: $md-grid;
 	}
 
 	@include sm {
+		// background-color: rgba(70, 131, 180, 0.185);
 		// background-color: steelblue;
 		width: $sm-grid;
 	}
 
 	@include xs {
+		// background-color: rgba(34, 139, 34, 0.24);
 		// background-color: forestgreen;
 		width: $xs-grid;
 	}
 
 	@include xxs {
+		// background-color: rgba(255, 105, 180, 0.219);
 		// background-color: hotpink;
 		width: $xxs-grid;
 	}
+	// @include md-and-less {
+	// 	background-color: firebrick;
+	// }
 }
 
 /////

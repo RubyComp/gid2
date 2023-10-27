@@ -8,11 +8,11 @@ block content
 	.container
 		.account
 			.account__aside
-				include ../modules/balance-aside
+				include ../modules/account-aside
 			.account__main
-				.orders
+				.account__block
 					.bread Личный кабинет / Ваши заказы
-					h1 Ваши заказы
+					h1.account__title Ваши заказы
 
 					.placeholder-image
 						img(src="/resources/images/hand.png", alt="")
@@ -24,3 +24,53 @@ block content
 						.message__aside
 							.btn.btn_primary Создать заказ
 
+					.orders-list
+						section.order
+							.order__main
+								header.order__header
+									.order__icon
+										img(src="/resources/images/social/telegram.svg", alt="Telegram")
+									.order__title
+										.order__date 18.10.2023
+										.order__name Подписчики Телеграм «Эконом»
+								.order__detail
+									.order__value
+										.icon.icon-user-plus
+										span 250 шт
+									.order__value
+										.icon.icon-link
+										span https://t.me/sdfsdffa
+
+							aside.order__aside
+								.order__price
+									.order__price-title Стоимость
+									.order__price-text
+										b.order__price-value 240
+										small.order__price-note ₽
+								.btn.btn_glass Повторить заказ
+
+						section.order
+							.order__main
+								header.order__header
+									.order__icon
+										img(src="/resources/images/social/telegram.svg", alt="Telegram")
+									.order__title
+										.order__date 18.10.2023
+										.order__name Подписчики Телеграм «Эконом»
+								.order__detail
+									.order__value
+										.icon.icon-user-plus
+										span 250 шт
+									.order__value
+										.icon.icon-link
+										span https://t.me/sdfsdffa
+
+							aside.order__aside
+								.order__price
+									.order__price-title Стоимость
+									.order__price-text
+										b.order__price-value 240
+										small.order__price-note ₽
+								.btn.btn_glass Повторить заказ
+
+					include ../modules/paginator

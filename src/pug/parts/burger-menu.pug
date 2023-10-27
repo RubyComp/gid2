@@ -1,22 +1,16 @@
-.burger-menu#burger-menu
-	| Бургер
-	//- ul.burger-menu__nav
-	//- 	li
-	//- 		a(href="/one.html")
-	//- 			span Ссылка 1
-	//- 	li
-	//- 		a(href="/two.html")
-	//- 			span Ссылка 2
-	//- .burger-menu__tel
-	//- 	include ../modules/tel
-	
-	//- ul.burger-menu__social
-	//- 	li
-	//- 		a(href="")
-	//- 			img(src=imgPath + "icons/whatsapp.svg", alt="")
-	//- 	li
-	//- 		a(href="")
-	//- 			img(src=imgPath + "icons/telegram.svg", alt="")
-	//- 	li
-	//- 		a(href="")
-	//- 			img(src=imgPath + "icons/email.svg", alt="")
+#burger-menu
+	include ../modules/nav
+	.burger-actions
+		.burger-actions__set
+			a(href="/orders.html").btn.btn_light Личный кабинет
+			a(href="/orders.html").btn.btn_light Войти
+			a(href="/orders.html").btn.btn_glass Регистрация
+
+		.burger-actions__set
+			.balance-detail.balance-detail_compact.balance-detail_light
+				.balance-detail__main
+					a(href="/orders.html").btn.btn_icon.btn_rub
+						.balance-label.balance-label_light
+							.balance-label__title Ваш баланс:
+							.balance-label__value 7 048 ₽
+			a(href="/contacts.html").btn.btn_glass Написать в поддержку

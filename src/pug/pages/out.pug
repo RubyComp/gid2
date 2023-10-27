@@ -1,0 +1,45 @@
+extends ../templates/common
+
+block vars
+	- const title = 'Вывести бонусы'
+
+block content
+	.container
+		.account
+			.account__aside
+				include ../modules/account-aside
+			.account__main
+				.account__block
+					.bread Личный кабинет / Баланс / Вывести бонусы
+					h1.account__title Вывести бонусы
+
+					.balance-detail.balance-detail_compact
+						.balance-detail__bonus
+							.btn.btn_icon.btn_star
+								.balance-label
+									.balance-label__title Ваши бонусы:
+									.balance-label__value 150 ₽
+						.note
+							.note__icon.icon-warn
+							.note__text 1 бонус = 1 рублю
+
+					form.form
+						h2 Введите данные
+
+						section.input-section
+							.input-title Сумма
+							.extra-input
+								input(type="text")
+
+						section.input-section
+							.input-title Платежная система
+							.extra-input
+								input(type="text")
+
+						section.input-section
+							.input-title Номер кошелька
+							.extra-input
+								input(type="text")
+
+						.form-actions
+							.btn.btn_primary Вывести

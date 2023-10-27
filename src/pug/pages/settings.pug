@@ -1,0 +1,37 @@
+extends ../templates/common
+
+block vars
+	- const title = 'Настройки'
+
+block content
+	.container
+		.account
+			.account__aside
+				include ../modules/account-aside
+			.account__main
+				.account__block
+					.bread Личный кабинет / Настройки
+					h1.account__title Настройки
+
+					form.form
+						h2 Введите данные
+
+						section.input-section
+							.input-title Ваш e-mail
+							.extra-input
+								input(type="text")
+
+						section.input-section
+							.input-title Введите новый пароль
+							.extra-input
+								input(type="password")
+
+						section.input-section
+							.input-title Подтвердите пароль
+							.extra-input
+								input(type="password")
+
+						.form-actions
+							.btn.btn_primary Сохранить
+
+

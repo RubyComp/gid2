@@ -140,7 +140,7 @@ const copyFiles = gulp.series('generate-favicon', () => {
 
 const compilePug = () => {
 	return gulp.src('src/pug/pages/**/*.pug')
-		.pipe(pug())
+		.pipe(pug({ pretty: true }))
 		.pipe(gulp.dest('dist/'))
 		.pipe(livereload())
 }
